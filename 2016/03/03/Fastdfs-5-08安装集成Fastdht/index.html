@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Fastdfs 5.08安装集成Fastdht | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+安装FastDFS 5.08、FastDHT和fastdfs-nginx-module机器端口规划
+
+
+机器IP
+ID
+fastdht
+Stroage
+tracker
+Nginx端口
+
+
+
+
+192.168.190.31
+100001
+11411
+23000
+22122
+80  
+
+
+192.168.190.32
+100002
+11411
+23000
+22122
+80
+
+
+192.16">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fastdfs 5.08安装集成Fastdht">
+<meta property="og:url" content="http://yoursite.com/2016/03/03/Fastdfs-5-08安装集成Fastdht/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]
+安装FastDFS 5.08、FastDHT和fastdfs-nginx-module机器端口规划
+
+
+机器IP
+ID
+fastdht
+Stroage
+tracker
+Nginx端口
+
+
+
+
+192.168.190.31
+100001
+11411
+23000
+22122
+80  
+
+
+192.168.190.32
+100002
+11411
+23000
+22122
+80
+
+
+192.16">
+<meta property="og:updated_time" content="2016-03-03T05:33:00.499Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fastdfs 5.08安装集成Fastdht">
+<meta name="twitter:description" content="[TOC]
+安装FastDFS 5.08、FastDHT和fastdfs-nginx-module机器端口规划
+
+
+机器IP
+ID
+fastdht
+Stroage
+tracker
+Nginx端口
+
+
+
+
+192.168.190.31
+100001
+11411
+23000
+22122
+80  
+
+
+192.168.190.32
+100002
+11411
+23000
+22122
+80
+
+
+192.16">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Muyan Xia</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>Tags</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/2016Note/" style="font-size: 20px;">2016Note</a> <a href="/tags/2017Note/" style="font-size: 10px;">2017Note</a> <a href="/tags/Consul/" style="font-size: 10px;">Consul</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/Payment/" style="font-size: 20px;">Payment</a> <a href="/tags/Swagger/" style="font-size: 10px;">Swagger</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/杂谈/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 16.67px;">笔记</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Muyan Xia</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Muyan Xia</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Fastdfs-5-08安装集成Fastdht" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/03/Fastdfs-5-08安装集成Fastdht/" class="article-date">
+  	<time datetime="2016-03-03T05:31:25.000Z" itemprop="datePublished">2016-03-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Fastdfs 5.08安装集成Fastdht
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2016Note/">2016Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Payment/">Payment</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="安装FastDFS_5-08、FastDHT和fastdfs-nginx-module">安装FastDFS 5.08、FastDHT和fastdfs-nginx-module</h1><h2 id="机器端口规划">机器端口规划</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">机器IP</th>
+<th style="text-align:center">ID</th>
+<th style="text-align:center">fastdht</th>
+<th style="text-align:center">Stroage</th>
+<th style="text-align:center">tracker</th>
+<th style="text-align:center">Nginx端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">192.168.190.31</td>
+<td style="text-align:center">100001</td>
+<td style="text-align:center">11411</td>
+<td style="text-align:center">23000</td>
+<td style="text-align:center">22122</td>
+<td style="text-align:center">80  </td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.190.32</td>
+<td style="text-align:center">100002</td>
+<td style="text-align:center">11411</td>
+<td style="text-align:center">23000</td>
+<td style="text-align:center">22122</td>
+<td style="text-align:center">80</td>
+</tr>
+<tr>
+<td style="text-align:center">192.168.190.33</td>
+<td style="text-align:center">100003</td>
+<td style="text-align:center">11411</td>
+<td style="text-align:center">23000</td>
+<td style="text-align:center">22122</td>
+<td style="text-align:center">80</td>
+</tr>
+</tbody>
+</table>
+<p>##安装</p>
+<p><strong>1. 安装</strong></p>
+<p>安装设备：所有</p>
+<p>软件需求：<code>fastdfs</code>  <code>libfastcommon</code> <code>fastdht</code> <code>fastdfs-nginx-module</code></p>
+<p>下载源代码编译安装</p>
+<p>cd /usr/src<br>git clone <a href="https://github.com/happyfish100/libfastcommon.git" target="_blank" rel="external">https://github.com/happyfish100/libfastcommon.git</a><br>git clone <a href="https://github.com/happyfish100/fastdfs.git" target="_blank" rel="external">https://github.com/happyfish100/fastdfs.git</a><br>git clone <a href="https://github.com/happyfish100/fastdht.git" target="_blank" rel="external">https://github.com/happyfish100/fastdht.git</a><br>git clone <a href="https://github.com/happyfish100/fastdfs-nginx-module.git" target="_blank" rel="external">https://github.com/happyfish100/fastdfs-nginx-module.git</a></p>
+<p><strong>优先安装<code>libfastcommon</code>解决依赖关系</strong><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装lib</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src/libfastcommon</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装fastDHT需要安装的时候依赖Berkeley DB 4.7.25 </span></span><br><span class="line"><span class="comment"># 可以使用rpm -qa db*来查看系统是否安装,如没有请先安装优先使用yum </span></span><br><span class="line"><span class="built_in">cd</span> /usr/src/fastdht</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br><span class="line"></span><br><span class="line"><span class="comment"># 安装fastDFS</span></span><br><span class="line"><span class="built_in">cd</span> /usr/src/fastdfs</span><br><span class="line">./make.sh</span><br><span class="line">./make.sh install</span><br></pre></td></tr></table></figure></p>
+<p>部分系统会出现故因为依赖的问题可以参考.</p>
+<pre><code>可以看到libfastcommon.so安装到了/usr/lib64/libfastcommon.so
+但是<span class="constant">FastDFS</span>主程序设置的<span class="class"><span class="keyword">lib</span>目录是/<span class="title">usr</span>/<span class="title">local</span>/<span class="title">lib</span></span>
+所以需要创建软链接.
+ln -s /usr/lib64/libfastcommon.so /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">libfastcommon</span>.<span class="title">so</span></span>
+ln -s /usr/lib64/libfastcommon.so /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">libfastcommon</span>.<span class="title">so</span></span>
+ln -s /usr/lib64/libfdfsclient.so /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">libfdfsclient</span>.<span class="title">so</span></span>
+ln -s /usr/lib64/libfdfsclient.so /usr/<span class="class"><span class="keyword">lib</span>/<span class="title">libfdfsclient</span>.<span class="title">so</span> </span>
+</code></pre><p>优先安装<code>Berkeley DB</code>解决依赖关系：<br>Berkeley DB 安装</p>
+<pre><code>tar zxvf db-<span class="number">4.7</span><span class="number">.25</span>.tar.gz
+cd db-<span class="number">4.7</span><span class="number">.25</span>/build_unix
+../dist/configure --prefix=/usr
+make &amp;&amp; make install
+</code></pre><p>安装设备：所有</p>
+<p>软件需求：<code>nginx</code> <code>fastdfs-nginx-module</code></p>
+<p>下载安装包: <code>fastdfs-nginx-module</code> </p>
+<p>解决依赖关系：</p>
+<pre><code>yum -y <span class="operator"><span class="keyword">install</span> gcc gcc-<span class="keyword">c</span>++ autoconf automake glibc-devel make openssl-devel pcre-devel</span>
+</code></pre><hr>
+<p>编译安装nginx追加模块(Nginx 安装不做介绍请自行安装)</p>
+<p>./configure –add-module=/usr/src/fastdfs-nginx-module/src<br>make<br>make install</p>
+<h2 id="配置">配置</h2><h3 id="FastDHT">FastDHT</h3><p>配置与FastDHT相关参数</p>
+<p>/etc/fdht/fdhtd.conf<br><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="setting">disabled=<span class="value"><span class="keyword">false</span></span></span></span><br><span class="line"><span class="setting">bind_addr=<span class="value"><span class="number">192.168</span>.<span class="number">190.31</span></span></span></span><br><span class="line"><span class="setting">port=<span class="value"><span class="number">11411</span></span></span></span><br><span class="line"><span class="setting">connect_timeout=<span class="value"><span class="number">5</span></span></span></span><br><span class="line"><span class="setting">network_timeout=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">base_path=<span class="value">/data/DFS/fastdht</span></span></span><br><span class="line"><span class="setting">max_connections=<span class="value"><span class="number">256</span></span></span></span><br><span class="line"><span class="setting">accept_threads=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">max_threads=<span class="value"><span class="number">8</span></span></span></span><br><span class="line"><span class="setting">max_pkg_size=<span class="value"><span class="number">64</span>KB</span></span></span><br><span class="line"><span class="setting">min_buff_size=<span class="value"><span class="number">64</span>KB</span></span></span><br><span class="line"><span class="setting">store_type = <span class="value">BDB</span></span></span><br><span class="line"><span class="setting">cache_size = <span class="value"><span class="number">64</span>MB</span></span></span><br><span class="line"><span class="setting">db_prefix = <span class="value">db</span></span></span><br><span class="line"><span class="setting">page_size = <span class="value"><span class="number">4096</span></span></span></span><br><span class="line"><span class="setting">db_type = <span class="value">btree</span></span></span><br><span class="line"><span class="setting">mpool_init_capacity = <span class="value"><span class="number">10000</span></span></span></span><br><span class="line"><span class="setting">mpool_load_factor = <span class="value"><span class="number">0.75</span></span></span></span><br><span class="line"><span class="setting">mpool_htable_lock_count = <span class="value"><span class="number">1361</span></span></span></span><br><span class="line"><span class="setting">mpool_clear_min_interval = <span class="value"><span class="number">30</span></span></span></span><br><span class="line"><span class="setting">log_level=<span class="value">info</span></span></span><br><span class="line"><span class="setting">run_by_group=</span><br><span class="line"><span class="value">run_by_user=</span></span></span><br><span class="line"><span class="setting">allow_hosts=<span class="value">*</span></span></span><br><span class="line"><span class="setting">sync_log_buff_interval=<span class="value"><span class="number">10</span></span></span></span><br><span class="line"><span class="setting">sync_db_time_base=<span class="value"><span class="number">00</span>:<span class="number">00</span></span></span></span><br><span class="line"><span class="setting">sync_db_interval=<span class="value"><span class="number">86400</span></span></span></span><br><span class="line"><span class="setting">write_to_binlog=<span class="value"><span class="number">1</span></span></span></span><br><span class="line"><span class="setting">sync_binlog_buff_interval=<span class="value"><span class="number">60</span></span></span></span><br><span class="line"><span class="setting">need_clear_expired_data=<span class="value"><span class="keyword">true</span></span></span></span><br><span class="line"><span class="setting">clear_expired_time_base=<span class="value"><span class="number">04</span>:<span class="number">00</span></span></span></span><br><span class="line"><span class="setting">clear_expired_interval=<span class="value"><span class="number">86400</span></span></span></span><br><span class="line"><span class="setting">db_dead_lock_detect_interval=<span class="value"><span class="number">1000</span></span></span></span><br><span class="line"><span class="setting">compress_binlog_time_base=<span class="value"><span class="number">02</span>:<span class="number">00</span></span></span></span><br><span class="line"><span class="setting">compress_binlog_interval=<span class="value"><span class="number">86400</span></span></span></span><br><span class="line"><span class="setting">sync_stat_file_interval=<span class="value"><span class="number">300</span></span></span></span><br><span class="line"><span class="setting">write_mark_file_freq=<span class="value"><span class="number">5000</span></span></span></span><br><span class="line"><span class="setting">thread_stack_size=<span class="value"><span class="number">1</span>MB</span></span></span><br><span class="line"><span class="setting">if_alias_prefix=</span><br><span class="line"><span class="value">store_sub_keys=<span class="keyword">false</span></span></span></span><br></pre></td></tr></table></figure></p>
+<h3 id="FastDFS">FastDFS</h3><ol>
+<li>安装设备：tracker</li>
+</ol>
+<p>mkdir -p /data/DFS/fastdfs<br>修改FastDFS 配置文件tracker.conf<br>vim /etc/fdfs/tracker.conf<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">disabled=<span class="literal">false</span></span><br><span class="line">bind_addr=<span class="number">192.168</span><span class="number">.190</span><span class="number">.31</span>              <span class="preprocessor"># 根据机器的实际IP设置</span></span><br><span class="line">port=<span class="number">22122</span></span><br><span class="line">connect_timeout=<span class="number">30</span></span><br><span class="line">network_timeout=<span class="number">60</span></span><br><span class="line">base_path=/data/DFS/fastdfs</span><br><span class="line">max_connections=<span class="number">256</span></span><br><span class="line">accept_threads=<span class="number">1</span></span><br><span class="line">work_threads=<span class="number">4</span>                       <span class="preprocessor"># 先设置为<span class="number">4</span>,后期可以调整最大为<span class="number">24</span></span></span><br><span class="line">store_lookup=<span class="number">0</span></span><br><span class="line">store_group=group2</span><br><span class="line">store_server=<span class="number">0</span></span><br><span class="line">store_path=<span class="number">0</span></span><br><span class="line">download_server=<span class="number">0</span></span><br><span class="line">reserved_storage_space = <span class="number">10</span>%</span><br><span class="line">log_level=info</span><br><span class="line">run_by_group=</span><br><span class="line">run_by_user=</span><br><span class="line">allow_hosts=*</span><br><span class="line">sync_log_buff_interval = <span class="number">10</span></span><br><span class="line">check_active_interval = <span class="number">120</span></span><br><span class="line">thread_stack_size = <span class="number">64</span>KB</span><br><span class="line">storage_ip_changed_auto_adjust = <span class="literal">true</span></span><br><span class="line">storage_sync_file_max_delay = <span class="number">86400</span></span><br><span class="line">storage_sync_file_max_time = <span class="number">300</span></span><br><span class="line">use_trunk_file = <span class="literal">false</span> </span><br><span class="line">slot_min_size = <span class="number">256</span></span><br><span class="line">slot_max_size = <span class="number">16</span>MB</span><br><span class="line">trunk_file_size = <span class="number">64</span>MB</span><br><span class="line">trunk_create_file_advance = <span class="literal">false</span></span><br><span class="line">trunk_create_file_time_base = <span class="number">02</span>:<span class="number">00</span></span><br><span class="line">trunk_create_file_interval = <span class="number">86400</span></span><br><span class="line">trunk_create_file_space_threshold = <span class="number">20</span>G</span><br><span class="line">trunk_init_check_occupying = <span class="literal">false</span></span><br><span class="line">trunk_init_reload_from_binlog = <span class="literal">false</span></span><br><span class="line">trunk_compress_binlog_min_interval = <span class="number">0</span></span><br><span class="line">use_storage_id = <span class="literal">false</span></span><br><span class="line">storage_ids_filename = storage_ids.conf</span><br><span class="line">id_type_in_filename = ip</span><br><span class="line">store_slave_file_use_link = <span class="literal">false</span></span><br><span class="line">rotate_error_log = <span class="literal">false</span></span><br><span class="line">error_log_rotate_time=<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">rotate_error_log_size = <span class="number">0</span></span><br><span class="line">log_file_keep_days =<span class="number">7</span></span><br><span class="line">use_connection_pool = <span class="literal">false</span></span><br><span class="line">connection_pool_max_idle_time = <span class="number">3600</span></span><br><span class="line">http.server_port=<span class="number">8080</span></span><br><span class="line">http.check_alive_interval=<span class="number">30</span></span><br><span class="line">http.check_alive_type=tcp</span><br><span class="line">http.check_alive_uri=/status.html</span><br></pre></td></tr></table></figure></p>
+<p>/etc/fdht/fdht_servers.conf<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">group_count = <span class="number">1</span></span><br><span class="line">group0 = <span class="number">192.168</span><span class="number">.190</span><span class="number">.31</span>:<span class="number">11411</span></span><br><span class="line">group0 = <span class="number">192.168</span><span class="number">.190</span><span class="number">.32</span>:<span class="number">11411</span></span><br><span class="line">group0 = <span class="number">192.168</span><span class="number">.190</span><span class="number">.33</span>:<span class="number">11411</span></span><br></pre></td></tr></table></figure></p>
+<ol>
+<li>安装设备：storage<br>创建数据存放目录<br>mkdir -p /data/DFS/fastdfs<br>ln -s /data/DFS/fastdfs/data /data/DFS/fastdfs/data/M00<br>修改FastDFS 配置文件storage.conf<br>vim /etc/fdfs/storage.conf<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">disabled=<span class="literal">false</span></span><br><span class="line">group_name=group1</span><br><span class="line">bind_addr=<span class="number">192.168</span><span class="number">.190</span><span class="number">.31</span>        <span class="preprocessor"># 根据机器的实际IP设置</span></span><br><span class="line">client_bind=<span class="literal">true</span></span><br><span class="line">port=<span class="number">23000</span></span><br><span class="line">connect_timeout=<span class="number">30</span></span><br><span class="line">network_timeout=<span class="number">60</span></span><br><span class="line">heart_beat_interval=<span class="number">30</span></span><br><span class="line">stat_report_interval=<span class="number">60</span></span><br><span class="line">base_path=/data/DFS/fastdfs</span><br><span class="line">max_connections=<span class="number">256</span></span><br><span class="line">buff_size = <span class="number">256</span>KB</span><br><span class="line">accept_threads=<span class="number">1</span></span><br><span class="line">work_threads=<span class="number">24</span>                 <span class="preprocessor"># 根据CPU的核心数量设置</span></span><br><span class="line">disk_rw_separated = <span class="literal">true</span></span><br><span class="line">disk_reader_threads = <span class="number">1</span></span><br><span class="line">disk_writer_threads = <span class="number">1</span></span><br><span class="line">sync_wait_msec=<span class="number">50</span></span><br><span class="line">sync_interval=<span class="number">0</span></span><br><span class="line">sync_start_time=<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">sync_end_time=<span class="number">23</span>:<span class="number">59</span></span><br><span class="line">write_mark_file_freq=<span class="number">500</span></span><br><span class="line">store_path_count=<span class="number">1</span></span><br><span class="line">store_path0=/data/DFS/fastdfs</span><br><span class="line">subdir_count_per_path=<span class="number">256</span></span><br><span class="line">tracker_server=<span class="number">192.168</span><span class="number">.190</span><span class="number">.31</span>:<span class="number">22122</span>   <span class="preprocessor"># 并行配置多个可重复</span></span><br><span class="line">tracker_server=<span class="number">192.168</span><span class="number">.190</span><span class="number">.32</span>:<span class="number">22122</span>   <span class="preprocessor"># 并行配置多个可重复</span></span><br><span class="line">tracker_server=<span class="number">192.168</span><span class="number">.190</span><span class="number">.33</span>:<span class="number">22122</span>   <span class="preprocessor"># 并行配置多个可重复</span></span><br><span class="line">log_level=info</span><br><span class="line">run_by_group=                         <span class="preprocessor"># 运行用户组,不设置为当前</span></span><br><span class="line">run_by_user=                          <span class="preprocessor"># 运行用户组,不设置为当前</span></span><br><span class="line">allow_hosts=*                 </span><br><span class="line">file_distribute_path_mode=<span class="number">0</span></span><br><span class="line">file_distribute_rotate_count=<span class="number">100</span></span><br><span class="line">fsync_after_written_bytes=<span class="number">0</span></span><br><span class="line">sync_log_buff_interval=<span class="number">10</span></span><br><span class="line">sync_binlog_buff_interval=<span class="number">10</span></span><br><span class="line">sync_stat_file_interval=<span class="number">300</span></span><br><span class="line">thread_stack_size=<span class="number">512</span>KB</span><br><span class="line">upload_priority=<span class="number">10</span></span><br><span class="line">if_alias_prefix=</span><br><span class="line">check_file_duplicate=<span class="number">1</span>               <span class="preprocessor"># fastDHT配置,为<span class="number">1</span>开启</span></span><br><span class="line">file_signature_method=hash</span><br><span class="line">key_namespace=FastDFS</span><br><span class="line">keep_alive=<span class="number">1</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> /etc/fdht/fdht_servers.conf  #  引用fastDHT配置</span></span><br><span class="line">use_access_log = <span class="literal">false</span></span><br><span class="line">rotate_access_log = <span class="literal">false</span></span><br><span class="line">access_log_rotate_time=<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">rotate_error_log = <span class="literal">false</span></span><br><span class="line">error_log_rotate_time=<span class="number">00</span>:<span class="number">00</span></span><br><span class="line">rotate_access_log_size = <span class="number">0</span></span><br><span class="line">rotate_error_log_size = <span class="number">0</span></span><br><span class="line">log_file_keep_days = <span class="number">7</span>                <span class="preprocessor"># 日志文件保存一周</span></span><br><span class="line">file_sync_skip_invalid_record=<span class="literal">false</span></span><br><span class="line">use_connection_pool = <span class="literal">false</span></span><br><span class="line">connection_pool_max_idle_time = <span class="number">3600</span></span><br><span class="line">http.domain_name=</span><br><span class="line">http.server_port=<span class="number">8888</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>/etc/fdfs/storage_ids.conf<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100001</span>   group1  <span class="number">192.168</span><span class="number">.190</span><span class="number">.31</span></span><br><span class="line"><span class="number">100002</span>   group1  <span class="number">192.168</span><span class="number">.190</span><span class="number">.32</span></span><br><span class="line"><span class="number">100003</span>   group1  <span class="number">192.168</span><span class="number">.190</span><span class="number">.33</span></span><br></pre></td></tr></table></figure></p>
+<p>其他参考实施脚本~<br>mkdir -p /data/DFS/fastdht<br>sed -i ‘s#192.168.190.31#192.168.190.32#g’ /etc/fdht/fdhtd.conf<br>sed -i ‘s#192.168.190.31#192.168.190.33#g’ /etc/fdht/fdhtd.conf</p>
+<p>mkdir -p /data/DFS/fastdfs<br>sed -i ‘s#192.168.190.31#192.168.190.32#g’ /etc/fdfs/storage.conf<br>sed -i ‘s#192.168.190.31#192.168.190.32#g’ /etc/fdfs/tracker.conf<br>mkdir -p /data/DFS/fastdfs<br>sed -i ‘s#192.168.190.31#192.168.190.33#g’ /etc/fdfs/storage.conf<br>sed -i ‘s#192.168.190.31#192.168.190.33#g’ /etc/fdfs/tracker.conf </p>
+<h3 id="启动&amp;停止">启动&amp;停止</h3><p>启动脚本<br>fdhtd /etc/fdht/fdhtd.conf<br>fdfs_trackerd /etc/fdfs/tracker.conf<br>fdfs_storaged /etc/fdfs/storage.conf<br>停止<br>killall fdfs_storaged<br>killall fdfs_trackerd<br>killall fdhtd</p>
+<h3 id="nginx">nginx</h3><p>上层转发nginx增加配置</p>
+<pre><code><span class="title">vim</span> /usr/local/nginx/conf/nginx.conf
+<span class="comment">#user  nobody;</span>
+worker_processes  <span class="number">24</span>;   <span class="comment">#通常设置为CPU 数</span>
+
+<span class="title">http</span> {
+    <span class="title">include</span>       mime.types;
+    <span class="title">default_type</span>  application/octet-stream;
+
+    <span class="comment">#log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span>
+    <span class="comment">#                  '$status $body_bytes_sent "$http_referer" '</span>
+    <span class="comment">#                  '"$http_user_agent" "$http_x_forwarded_for"';</span>
+
+    <span class="comment">#access_log  logs/access.log  main;</span>
+
+    <span class="title">sendfile</span>        <span class="built_in">on</span>;
+    <span class="comment">#tcp_nopush     on;</span>
+
+    <span class="comment">#keepalive_timeout  0;</span>
+    <span class="title">keepalive_timeout</span>  <span class="number">65</span>;
+
+    <span class="comment">#gzip  on;</span>
+
+    <span class="title">upstream</span> server_dfs{            <span class="comment"># 新增</span>
+    <span class="title">server</span> <span class="number">192.168.190.31:80</span>;       <span class="comment"># 新增</span>
+    <span class="title">server</span> <span class="number">192.168.190.32:80</span>;       <span class="comment"># 新增</span>
+    <span class="title">server</span> <span class="number">192.168.190.33:80</span>;       <span class="comment"># 新增</span>
+    }                               <span class="comment"># 新增</span>
+
+    <span class="title">server</span> {
+        <span class="title">listen</span>       <span class="number">80</span>;
+        <span class="title">server_name</span>  localhost;
+
+        <span class="comment">#charset koi8-r;</span>
+
+        <span class="comment">#access_log  logs/host.access.log  main;</span>
+
+    <span class="title">location</span> ~/group\\d {                                           <span class="comment"># 新增</span>
+        <span class="title">proxy_redirect</span> <span class="built_in">off</span>;                                         <span class="comment"># 新增</span>
+        <span class="title">proxy_set_header</span> Host <span class="variable">$host</span>;                                <span class="comment"># 新增</span>
+        <span class="title">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;                    <span class="comment"># 新增</span>
+        <span class="title">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;<span class="comment"># 新增</span>
+        <span class="title">proxy_pass</span> <span class="url">http://server_dfs</span>;                               <span class="comment"># 新增</span>
+    }                                                               <span class="comment"># 新增</span>
+}
+</code></pre><p>2.安装设备：storage</p>
+<p>编译nginx时添加了fastdfs-nginx-module：</p>
+<pre><code>拷贝FastDFS目录下的文件：<span class="regexp">/usr/</span>src<span class="regexp">/fdstdfs/</span>conf<span class="regexp">/目录下：http.conf mime.types到/</span>etc/fdfs目录下
+cd <span class="regexp">/usr/</span>src<span class="regexp">/fdstdfs/</span>conf/
+cp http.conf mime.types <span class="regexp">/etc/</span>fdfs
+</code></pre><p>修改nginx配置文件</p>
+<pre><code>vim /usr/local/nginx/conf/nginx.conf
+
+#user  nobody<span class="comment">;</span>
+#  原值为1,修改为24 by muyan <span class="number">20151203</span>
+worker_processes  24<span class="comment">;</span>
+
+http {
+    include       mime.types<span class="comment">;</span>
+    default_type  application/octet-stream<span class="comment">;</span>
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"'<span class="comment">;</span>
+
+    #access_log  logs/access.log  main<span class="comment">;</span>
+
+    sendfile        on<span class="comment">;</span>
+    #tcp_nopush     on<span class="comment">;</span>
+
+    #keepalive_timeout  0<span class="comment">;</span>
+    keepalive_timeout  65<span class="comment">;</span>
+
+    #gzip  on<span class="comment">;</span>
+
+    server {
+        listen       80<span class="comment">;</span>
+        server_name  localhost<span class="comment">;</span>
+
+        #charset koi8-r<span class="comment">;</span>
+
+        #access_log  logs/host.access.log  main<span class="comment">;</span>
+
+        location / {
+            root   html<span class="comment">;</span>
+            index  index.html index.htm<span class="comment">;</span>
+        }
+
+    # 新增开始 by muyan <span class="number">20151203</span>
+    location ~/group\\d+/M00 {            
+        root   /data/DFS/fastdfs/data/<span class="comment">;        </span>
+        ngx_fastdfs_module<span class="comment">;                       </span>
+    }
+    # 新增结束 by muyan <span class="number">20151203</span>
+｝
+</code></pre>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/22/自动化运维/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          自动化运维
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/13/日志规范/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">日志规范</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Fastdfs-5-08安装集成Fastdht" data-title="Fastdfs 5.08安装集成Fastdht" data-url="http://yoursite.com/2016/03/03/Fastdfs-5-08安装集成Fastdht/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Muyan Xia
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: /
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

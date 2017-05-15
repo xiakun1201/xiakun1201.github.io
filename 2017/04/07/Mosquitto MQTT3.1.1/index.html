@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="[TOC]
+安装mosquitto
+12345678910111213141516cd /etc/yum.repos.d/# The available packages are: mosquitto, mosquitto-clients, libmosquitto1, libmosquitto-devel, libmosquittopp1, libmosquittopp-devel, pytho">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/2017/04/07/Mosquitto MQTT3.1.1/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]
+安装mosquitto
+12345678910111213141516cd /etc/yum.repos.d/# The available packages are: mosquitto, mosquitto-clients, libmosquitto1, libmosquitto-devel, libmosquittopp1, libmosquittopp-devel, pytho">
+<meta property="og:updated_time" content="2017-05-15T08:24:23.444Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="[TOC]
+安装mosquitto
+12345678910111213141516cd /etc/yum.repos.d/# The available packages are: mosquitto, mosquitto-clients, libmosquitto1, libmosquitto-devel, libmosquittopp1, libmosquittopp-devel, pytho">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Muyan Xia</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>Tags</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/2016Note/" style="font-size: 20px;">2016Note</a> <a href="/tags/2017Note/" style="font-size: 10px;">2017Note</a> <a href="/tags/Consul/" style="font-size: 10px;">Consul</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/Payment/" style="font-size: 20px;">Payment</a> <a href="/tags/Swagger/" style="font-size: 10px;">Swagger</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/杂谈/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 16.67px;">笔记</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Muyan Xia</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Muyan Xia</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-Mosquitto MQTT3.1.1" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/04/07/Mosquitto MQTT3.1.1/" class="article-date">
+  	<time datetime="2017-04-07T02:04:58.000Z" itemprop="datePublished">2017-04-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="安装">安装</h1><p>mosquitto</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">cd /etc/yum.repos.d/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># The available packages are: mosquitto, mosquitto-clients, libmosquitto1, libmosquitto-devel, libmosquittopp1, libmosquittopp-devel, python-mosquitto.</span></span><br><span class="line"><span class="preprocessor"># wget http:<span class="comment">//download.opensuse.org/repositories/home:/oojah:/mqtt/CentOS_CentOS-6/home:oojah:mqtt.repo</span></span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># http:<span class="comment">//mosquitto.org/download/  其他操作系统地址</span></span></span><br><span class="line">yum search mosquitto*</span><br><span class="line">yum install  mosquitto*</span><br><span class="line"></span><br><span class="line">安装完成之后 </span><br><span class="line">系统命令行里发现 mosquitto,mosquitto_passwd,mosquitto_pub和mosquitto_sub四个工具分别用于启动代理、管理密码、发布消息和订阅消息。</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># mosquitto -v</span></span><br><span class="line"><span class="preprocessor"># <span class="number">1491895390</span>: mosquitto version <span class="number">1.4</span><span class="number">.10</span> (build date <span class="number">2016</span>-<span class="number">12</span>-<span class="number">05</span> <span class="number">08</span>:<span class="number">25</span>:<span class="number">40</span>+<span class="number">0000</span>) starting</span></span><br><span class="line"><span class="preprocessor"># <span class="number">1491895390</span>: Using default config.</span></span><br></pre></td></tr></table></figure>
+<h1 id="配置">配置</h1><p>cd /etc/mosquitto/<br>.<br>├── aclfile.example<br>├── ca_certificates<br>│   └── README<br>├── certs<br>│   └── README<br>├── conf.d<br>│   └── README<br>├── mosquitto.conf<br>├── mosquitto.conf.example<br>├── pskfile.example<br>└── pwfile.example</p>
+<p>参数说明：<br>mosquitto [-c config file] [ -d | –daemon ] [-p port number] [-v]</p>
+<h1 id="配置说明_mosquitto-conf">配置说明 mosquitto.conf</h1><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#10;# &#35774;&#32622;&#26725;&#25509;&#27169;&#24335;&#19979;&#65292;&#28040;&#24687;&#23558;&#20250;&#21457;&#24067;&#21040;&#30340;&#35805;&#39064;&#22320;&#22336;&#10;# $SYS/broker/connection//state&#10;#notification_topic  &#10;&#10;# &#35774;&#32622;&#26725;&#25509;&#30340;keepalive&#25968;&#20540;&#10;#keepalive_interval 60&#10;&#10;# &#26725;&#25509;&#27169;&#24335;&#65292;&#30446;&#21069;&#26377;&#19977;&#31181;&#65306;automatic&#12289;lazy&#12289;once&#10;#start_type automatic&#10;&#10;# &#26725;&#25509;&#27169;&#24335;automatic&#30340;&#36229;&#26102;&#26102;&#38388;&#10;#restart_timeout 30&#10;&#10;# &#26725;&#25509;&#27169;&#24335;lazy&#30340;&#36229;&#26102;&#26102;&#38388;&#10;#idle_timeout 60&#10;&#10;# &#26725;&#25509;&#23458;&#25143;&#31471;&#30340;&#29992;&#25143;&#21517;&#10;#username mosquitto_user&#10;&#10;# &#26725;&#25509;&#23458;&#25143;&#31471;&#30340;&#23494;&#30721;&#10;#password mosquitto_passwd&#10;&#10;allow_zero_length_clientid false&#10;persistent_client_expiration 10h&#10;max_connections -1&#10;persistence true&#10;log_type all&#10;connection_messages false&#10;allow_anonymous false</span><br></pre></td></tr></table></figure>
+<p>ulimit -n20000 -s512</p>
+<p><a href="http://blog.csdn.net/shagoo/article/details/7910598" target="_blank" rel="external">http://blog.csdn.net/shagoo/article/details/7910598</a></p>
+<p><a href="https://my.oschina.net/scholer/blog/296402" target="_blank" rel="external">https://my.oschina.net/scholer/blog/296402</a><br><a href="http://blog.itpub.net/28624388/viewspace-1177012/" target="_blank" rel="external">http://blog.itpub.net/28624388/viewspace-1177012/</a></p>
+<p>mosquitto -c /etc/mosquitto/mosquitto.conf -d</p>
+<p><a href="http://blog.csdn.net/houjixin/article/details/24305613" target="_blank" rel="external">http://blog.csdn.net/houjixin/article/details/24305613</a></p>
+<p><a href="https://mosquitto.org/man/mosquitto-tls-7.html" target="_blank" rel="external">https://mosquitto.org/man/mosquitto-tls-7.html</a></p>
+<p>openssl req -new -x509 -days 36600 -extensions v3_ca -keyout ca.key -out ca.crt<br>ca123456</p>
+<p>openssl genrsa -des3 -out server.key 2048<br>se123456</p>
+<p>openssl x509 -req -in server.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out server.crt -days 1500</p>
+<p>openssl genrsa -des3 -out client.key 2048<br>cl123456</p>
+<p>openssl pkcs8 -topk8 -in client.key -out client.pem -nocrypt</p>
+<p>openssl x509 -req -in client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out client.crt -days 1500</p>
+<h2 id="权限设置">权限设置</h2><p><a href="http://blog.csdn.net/smellmine/article/details/51216450" target="_blank" rel="external">http://blog.csdn.net/smellmine/article/details/51216450</a></p>
+<p>echo “password_file /etc/mosquitto/pwfile.conf” &gt;&gt; /etc/mosquitto/mosquitto.conf</p>
+<p>mosquitto_passwd -b pwfile.conf 022218 f1LKDnm8Uhzr81La<br>mosquitto_passwd -b pwfile.conf 022368 9s0z6j7y78521942<br>mosquitto_passwd -b pwfile.conf SERVER1 1s0z6j7y78521941<br>mosquitto_passwd -b pwfile.conf SERVER2 2s0z6j7y78521942<br>mosquitto_passwd -b pwfile.conf SERVER3 3s0z6j7y78521943<br>mosquitto_passwd -b pwfile.conf SERVER4 4s0z6j7y78521944<br>mosquitto_passwd -b pwfile.conf SERVER5 5s0z6j7y78521945<br>mosquitto_passwd -b pwfile.conf 00000840 839z77q75dqYB35s<br>mosquitto_passwd -b //etc/mosquitto/pwfile.conf 02002770 z1M7OH3K5GM8VUoP</p>
+<p>00000840 秘钥KEY:839z77q75dqYB35s</p>
+<p>openssl x509 -in ca.crt -out ca.pem -outform PEM</p>
+<p>mosquitto  用户账号重新加载</p>
+<p>$kill -SIGHUP <code>cat  /var/run/mosquitto.pid</code></p>
+<p>kill -SIGHUP <code>ps aux|grep mosquitto|awk &#39;{print $2}&#39;|sed -n 1p</code></p>
+<h1 id="权限控制插件">权限控制插件</h1><p>mosquitto-auth-plugin </p>
+<p><a href="https://github.com/jpmens/mosquitto-auth-plug" target="_blank" rel="external">https://github.com/jpmens/mosquitto-auth-plug</a></p>
+<h1 id="客户端证书">客户端证书</h1><p>openssl genrsa -out client.key 2048<br>$ openssl req -new -out julu-client.csr -key julu-client.key -subj “/CN=client/O=julutech.com”<br>$ openssl x509 -req -in client.csr -CA ca.crt<br>-CAkey ca.key -CAserial ./ca.srl -out client.crt<br>-days 3650 -addtrust clientAuth</p>
+<p>openssl genrsa -des3 -out julu-client.key 2048<br>20170508<br>openssl req -new -out julu-client.csr -key julu-client.key -subj “/CN=client/O=julutech.com”</p>
+<p>openssl pkcs8 -topk8 -in julu-client.key -out julu-client.pem -nocrypt</p>
+<p>openssl x509 -req -in julu-client.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out julu-client.crt -days 1500</p>
+<p>server {<br>    listen 80;<br>    server_name www.ruyunlong.cn;<br>    index index.htm index.html ;<br>    root /usr/share/nginx/html/www;<br>}</p>
+<p>server {<br>    listen 80;<br>    server_name app.ruyunlong.cn;<br>    index index.htm index.html;<br>    root /usr/share/nginx/html/app;<br>}</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/02/入云龙账号/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          入云龙账号申请
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/27/项目大事件_170327151137/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Mosquitto MQTT3.1.1" data-title="" data-url="http://yoursite.com/2017/04/07/Mosquitto MQTT3.1.1/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Muyan Xia
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: /
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

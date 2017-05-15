@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>SpringBoot Consul Swagger | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="&amp;lt;!-- toc --&amp;gt;
+组件分布
+
+
+组件
+版本
+用途
+URL
+
+
+
+
+Spring Boot
+1.4.0
+代容器
+http://projects.spring.io/spring-boot/
+
+
+Consul
+0.7.5
+注册配置中心
+https://www.consul.io/intro/getting-started/install.html
+
+
+Swagger
+2.10.4
+API管理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot Consul Swagger">
+<meta property="og:url" content="http://yoursite.com/2016/09/07/SpringBoot Consul Swagger/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="&amp;lt;!-- toc --&amp;gt;
+组件分布
+
+
+组件
+版本
+用途
+URL
+
+
+
+
+Spring Boot
+1.4.0
+代容器
+http://projects.spring.io/spring-boot/
+
+
+Consul
+0.7.5
+注册配置中心
+https://www.consul.io/intro/getting-started/install.html
+
+
+Swagger
+2.10.4
+API管理">
+<meta property="og:updated_time" content="2017-05-13T04:22:56.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SpringBoot Consul Swagger">
+<meta name="twitter:description" content="&amp;lt;!-- toc --&amp;gt;
+组件分布
+
+
+组件
+版本
+用途
+URL
+
+
+
+
+Spring Boot
+1.4.0
+代容器
+http://projects.spring.io/spring-boot/
+
+
+Consul
+0.7.5
+注册配置中心
+https://www.consul.io/intro/getting-started/install.html
+
+
+Swagger
+2.10.4
+API管理">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="//favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Muyan Xia</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>Tags</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="/#" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+					        
+								<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+					        
+								<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/2016Note/" style="font-size: 20px;">2016Note</a> <a href="/tags/2017Note/" style="font-size: 10px;">2017Note</a> <a href="/tags/Consul/" style="font-size: 10px;">Consul</a> <a href="/tags/MQTT/" style="font-size: 10px;">MQTT</a> <a href="/tags/Payment/" style="font-size: 20px;">Payment</a> <a href="/tags/Swagger/" style="font-size: 10px;">Swagger</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a> <a href="/tags/分布式/" style="font-size: 10px;">分布式</a> <a href="/tags/杂谈/" style="font-size: 13.33px;">杂谈</a> <a href="/tags/笔记/" style="font-size: 16.67px;">笔记</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">奥巴马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">卡卡的美丽传说</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">本泽马的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">吉格斯的博客</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">习大大大不同</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://localhost:4000/">托蒂的博客</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">我是谁，我从哪里来，我到哪里去？我就是我，是颜色不一样的吃货…</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Muyan Xia</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img lazy-src="nullhttp://7xohxb.com1.z0.glb.clouddn.com/static/images/logo.jpg" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Muyan Xia</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="/#" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="/#" title="weibo">weibo</a>
+			        
+						<a class="rss" target="_blank" href="/#" title="rss">rss</a>
+			        
+						<a class="zhihu" target="_blank" href="/#" title="zhihu">zhihu</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-SpringBoot Consul Swagger" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/07/SpringBoot Consul Swagger/" class="article-date">
+  	<time datetime="2016-09-07T00:30:02.000Z" itemprop="datePublished">2016-09-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SpringBoot Consul Swagger
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Consul/">Consul</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swagger/">Swagger</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/技术/">技术</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- toc -->
+<h2 id="组件分布">组件分布</h2><table>
+<thead>
+<tr>
+<th>组件</th>
+<th>版本</th>
+<th>用途</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Spring Boot</td>
+<td>1.4.0</td>
+<td>代容器</td>
+<td><a href="http://projects.spring.io/spring-boot/" target="_blank" rel="external">http://projects.spring.io/spring-boot/</a></td>
+</tr>
+<tr>
+<td>Consul</td>
+<td>0.7.5</td>
+<td>注册配置中心</td>
+<td><a href="https://www.consul.io/intro/getting-started/install.html" target="_blank" rel="external">https://www.consul.io/intro/getting-started/install.html</a></td>
+</tr>
+<tr>
+<td>Swagger</td>
+<td>2.10.4</td>
+<td>API管理</td>
+<td><a href="http://swagger.io/" target="_blank" rel="external">http://swagger.io/</a></td>
+</tr>
+<tr>
+<td>Hystrix</td>
+<td>1.5.10</td>
+<td>弹性框架</td>
+<td><a href="https://github.com/Netflix/Hystrix" target="_blank" rel="external">https://github.com/Netflix/Hystrix</a></td>
+</tr>
+<tr>
+<td>jwt</td>
+<td>3.0.1</td>
+<td>认证框架</td>
+<td><a href="https://github.com/auth0/java-jwt" target="_blank" rel="external">https://github.com/auth0/java-jwt</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="Consul">Consul</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 下载地址 https://www.consul.io/downloads.html</span></span><br><span class="line"><span class="built_in">cd</span>  /tmp  &amp; wget https://releases.hashicorp.com/consul/<span class="number">0.7</span>.<span class="number">5</span>/consul_0.<span class="number">7.5</span>_linux_amd64.zip?_ga=<span class="number">1.14278835</span>.<span class="number">504518699.1489382125</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># WEB UI</span></span><br><span class="line">wget https://releases.hashicorp.com/consul/<span class="number">0.7</span>.<span class="number">5</span>/consul_0.<span class="number">7.5</span>_web_ui.zip?_ga=<span class="number">1.216705042</span>.<span class="number">504518699.1489382125</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Server </span></span><br><span class="line">/usr/<span class="built_in">local</span>/consul/consul agent -server -bootstrap-expect <span class="number">2</span> -data-dir ./tmp/consul -node=n56 -bind=<span class="number">10.0</span>.<span class="number">21.56</span> -ui-dir ./dist -datacenter=dc1  &amp;</span><br><span class="line">/usr/<span class="built_in">local</span>/consul/consul  agent -server -bootstrap-expect <span class="number">2</span> -data-dir ./tmp/consul -node=n57 -bind=<span class="number">10.0</span>.<span class="number">21.57</span> -ui-dir ./dist -datacenter=dc1  &amp;</span><br><span class="line">/usr/<span class="built_in">local</span>/consul/consul  agent -server -bootstrap-expect <span class="number">2</span> -data-dir ./tmp/consul -node=n58 -bind=<span class="number">10.0</span>.<span class="number">21.58</span> -ui-dir ./dist -datacenter=dc1  &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重启之后不生效可以在命令后面加 -rejoin</span></span><br><span class="line"><span class="comment">## 组件集群(在57和58执行)</span></span><br><span class="line">/usr/<span class="built_in">local</span>/consul/consul join <span class="number">10.0</span>.<span class="number">21.56</span> &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Agent </span></span><br><span class="line">/usr/<span class="built_in">local</span>/consul/consul agent -data-dir ./tmp/consul -ui -client=<span class="number">0.0</span>.<span class="number">0.0</span>  -node=n59  -bind=<span class="number">10.0</span>.<span class="number">21.59</span>  -datacenter=dc1</span><br><span class="line"></span><br><span class="line">拉起来之后的一直</span><br><span class="line">http://<span class="number">10.0</span>.<span class="number">21.59</span>:<span class="number">8500</span>/</span><br><span class="line"><span class="comment">## Agent加入集群</span></span><br><span class="line">./consul join <span class="number">10.0</span>.<span class="number">21.57</span> &amp;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务注册以及健康检查</span></span><br><span class="line"></span><br><span class="line">consul agent -data-dir ./tmp/consul -ui -bind=<span class="number">10.0</span>.<span class="number">21.59</span> -dc=dc1 -config-file=./conf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看集群状态</span></span><br><span class="line">consul  operator raft -list-peers</span><br><span class="line"></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出</span></span><br><span class="line">consul  leave</span><br><span class="line"></span><br><span class="line"><span class="comment"># UI</span></span><br></pre></td></tr></table></figure>
+<h3 id="Consul_Commands">Consul Commands</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">$ consul</span><br><span class="line">usage: consul [<span class="comment">--version] [--help] &lt;command&gt; [&lt;args&gt;] </span></span><br><span class="line"></span><br><span class="line">$ consul join -h  : get join <span class="operator"><span class="keyword">help</span></span><br><span class="line"></span><br><span class="line">Available commands <span class="keyword">are</span>:</span><br><span class="line">    <span class="keyword">agent</span>          Runs a Consul <span class="keyword">agent</span></span><br><span class="line">    <span class="keyword">event</span>          Fire a <span class="keyword">new</span> <span class="keyword">event</span></span><br><span class="line">    exec           Executes a command <span class="keyword">on</span> Consul nodes</span><br><span class="line">    <span class="keyword">force</span>-leave    Forces a <span class="keyword">member</span> <span class="keyword">of</span> the cluster <span class="keyword">to</span> enter the <span class="string">"left"</span> state</span><br><span class="line">    info           Provides debugging information <span class="keyword">for</span> operators</span><br><span class="line">    <span class="keyword">join</span>           Tell Consul <span class="keyword">agent</span> <span class="keyword">to</span> <span class="keyword">join</span> cluster</span><br><span class="line">    keygen         Generates a <span class="keyword">new</span> encryption <span class="keyword">key</span></span><br><span class="line">    keyring        Manages gossip layer encryption <span class="keyword">keys</span></span><br><span class="line">    leave          Gracefully <span class="keyword">leaves</span> the Consul cluster <span class="keyword">and</span> shuts down</span><br><span class="line">    <span class="keyword">lock</span>           <span class="keyword">Execute</span> a command holding a <span class="keyword">lock</span></span><br><span class="line">    members        Lists the members <span class="keyword">of</span> a Consul cluster</span><br><span class="line">    monitor        Stream <span class="keyword">logs</span> <span class="keyword">from</span> a Consul <span class="keyword">agent</span></span><br><span class="line">    <span class="keyword">operator</span>       Provides cluster-<span class="keyword">level</span> tools <span class="keyword">for</span> Consul operators</span><br><span class="line">    reload         <span class="keyword">Triggers</span> the <span class="keyword">agent</span> <span class="keyword">to</span> reload configuration files</span><br><span class="line">    rtt            Estimates network <span class="keyword">round</span> trip <span class="keyword">time</span> <span class="keyword">between</span> nodes</span><br><span class="line">    <span class="keyword">version</span>        Prints the Consul <span class="keyword">version</span></span><br><span class="line">    watch          Watch <span class="keyword">for</span> changes <span class="keyword">in</span> Consul</span></span><br></pre></td></tr></table></figure>
+<h2 id="Swagger">Swagger</h2><h2 id="注册服务">注册服务</h2><p><a href="http://www.blogs8.cn/posts/WOW1b9c" target="_blank" rel="external">http://www.blogs8.cn/posts/WOW1b9c</a></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/09/买房要注意些什么/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          买房要注意些什么
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/27/技术各职位的区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">技术职位的区别</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="SpringBoot Consul Swagger" data-title="SpringBoot Consul Swagger" data-url="http://yoursite.com/2016/09/07/SpringBoot Consul Swagger/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 Muyan Xia
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false,
+		root: /
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
