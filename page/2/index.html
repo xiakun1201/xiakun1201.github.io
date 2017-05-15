@@ -198,69 +198,6 @@
 
       <div class="body-wrap">
   
-    <article id="post-买房要注意些什么" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/09/09/买房要注意些什么/" class="article-date">
-  	<time datetime="2016-09-09T03:16:33.000Z" itemprop="datePublished">2016-09-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/09/09/买房要注意些什么/">买房要注意些什么</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="证照">证照</h1><p>五证齐全（一般大的开发商就不要问了，很重要，签合同之前一定要看。）<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">建设用地规划许可证；</span><br><span class="line">建设工程规划许可证；</span><br><span class="line">建设工程开工证；</span><br><span class="line">国有土地使用证；</span><br><span class="line">商品房预售许可证。</span><br></pre></td></tr></table></figure></p>
-<p>房子的结构设计，结构以及抗震等级。<br>设计单位，施工单位，监理单位。主要看有没有信誉比较差的公司。</p>
-<p>未来物业的问题，车位的问题。<br>物业公司是业主以后环境的保障，差的物业公司会直接毁了小区的环境。</p>
-<p>容积率，绿化率这些可以做一些横向对比。</p>
-<p>公摊面积，得房率这个销售一般会给你介绍</p>
-<p>非常重要的是补充协议，一般的公司都不写他们违约该怎么办。补充协议以后要放到购房合同里面。<br>主要是规定出现啥样的情况应该怎么处理：<br>不按期交房，XXX；怎么赔偿。<br>房子面积和实际面积出现偏差的如何处理；（交房的时候要量房）<br>精装的房子，的话装修标准（建议买精装修）<br>明确退房责任。（万一发生不可抗力因素应该如何退房）</p>
-<p># </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂谈/">杂谈</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-SpringBoot Consul Swagger" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1066,6 +1003,107 @@ http {
     # 新增结束 by muyan <span class="number">20151203</span>
 ｝
 </code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/2016Note/">2016Note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Payment/">Payment</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-日志规范" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/13/日志规范/" class="article-date">
+  	<time datetime="2016-01-13T02:36:37.000Z" itemprop="datePublished">2016-01-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/13/日志规范/">日志规范</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[TOC]</p>
+<h1 id="系统开发日志输出规范">系统开发日志输出规范</h1><h2 id="日志应该遵循：简短，有效，可追溯三个最基本原则。">日志应该遵循：简短，有效，可追溯三个最基本原则。</h2><h3 id="日志分类（参考）">日志分类（参考）</h3><ul>
+<li>行为日志<ul>
+<li>UI切换，事件触发，页面 （页面和客户端）</li>
+</ul>
+</li>
+<li>性能日志<ul>
+<li>网络日志，性能埋点  （服务端，客户端）</li>
+</ul>
+</li>
+<li>异常日志<ul>
+<li>闪退，流量，电量  （客户端）</li>
+</ul>
+</li>
+<li>服务日志 <ul>
+<li>TraceLog，业务日志 （服务端）</li>
+</ul>
+</li>
+</ul>
+<h3 id="详细描述">详细描述</h3><p>主要规范日志的要求，在系统建设时期加强日志的输出规范，以协助其他生产系统和应用更早的发现故障;定位问题;减少人工干预;<br><em>服务日志</em>：在每个系统的入口和出口输出，（在调用外部系统之前，或者收到外部消息通知的时候输出）</p>
+<h4 id="详解典型流程中的日志输出">详解典型流程中的日志输出</h4><img title="imageTitle" alt="Desc" class="class1" src="http://7xohxb.com1.z0.glb.clouddn.com/static/images/flow-webpay.png?imageView2/2/w/600">
+<p>输出节点：</p>
+<ul>
+<li>外部消息交互<ul>
+<li>主动交互（查询外部接口，支付接口等）</li>
+<li>被动交互（提供服务被调用，银行通知接口）</li>
+</ul>
+</li>
+<li>内部系统调用<ul>
+<li>收单调用会员</li>
+<li>交易调用账户</li>
+<li>调用通知模块</li>
+<li>调用账户等~<h4 id="参考日志输出模型">参考日志输出模型</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.google.common.base.Objects;</span><br><span class="line"><span class="keyword">import</span> com.google.common.base.Strings;</span><br><span class="line"><span class="keyword">import</span> java.util.UUID;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span><br><span class="line"> * 日志跟踪模型</span><br><span class="line"> * &lt;p/&gt;</span><br><span class="line"> * &lt;p&gt;创建日志跟踪ID，并根据上一层级的ID产生直接的ID。使整个系统的日志能根据ID和时间，真实还原系统的调用关系。</span><br><span class="line"> *</span><br><span class="line"> * <span class="doctag">@author</span> muyan<span class="doctag">@baofoo</span>.com</span><br><span class="line"> * <span class="doctag">@version</span> 1.0.0 Created on 2016/1/2.</span><br><span class="line"> * <span class="doctag">@see</span></span><br><span class="line"> * <span class="doctag">@since</span> 1.7</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LogTraceModle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * UUID系统产生向后传递，且不能变化</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> String traceID = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 路由ID，反映系统之间的调用的层级关系，系统默认传出的ID为当前系统，入口系统为0.0</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> String routeID = <span class="string">"0"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 系统ID，默认分配</span><br><span class="line">     */</span></span><br><span class="line">    <span class="keyword">private</span> String systemID;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getTraceID</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 初始化系统</span></span><br><span class="line">        <span class="keyword">if</span> (Strings.isNullOrEmpty(traceID)) &#123;</span><br><span class="line">            traceID = String.valueOf(UUID.randomUUID());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> traceID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getRouteID</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> routeID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span><br><span class="line">     * 设置当前系统的</span><br><span class="line">     * <span class="doctag">@param</span> routeID</span><br><span class="line">     * <span class="doctag">@param</span> systemID</span><br><span class="line">     * <span class="doctag">@param</span> isSync  处理方式为同步系统为</span><br><span class="line">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setTraceModle</span><span class="params">( String systemID,<span class="keyword">boolean</span> isSync)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 同步调用处理开始</span></span><br><span class="line">        <span class="keyword">if</span> (isSync) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = routeID.lastIndexOf(<span class="string">"."</span>);</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">0</span> &lt; index) &#123;</span><br><span class="line">                String end = routeID.substring(index + <span class="number">1</span>);</span><br><span class="line">                String next = String.valueOf(Integer.parseInt(end) + <span class="number">1</span>);</span><br><span class="line">                routeID = routeID.substring(<span class="number">0</span>, index + <span class="number">1</span>) + next;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                routeID = String.valueOf(Integer.parseInt(routeID) + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            routeID = routeID.concat(<span class="string">".1"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>.systemID = systemID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setSystemID</span><span class="params">(String systemID)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.systemID = systemID;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (Strings.isNullOrEmpty(traceID)) &#123;</span><br><span class="line">            traceID = String.valueOf(UUID.randomUUID());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Objects.toStringHelper(<span class="keyword">this</span>)</span><br><span class="line">                .add(<span class="string">"traceID"</span>, traceID)</span><br><span class="line">                .add(<span class="string">"routeID"</span>, routeID)</span><br><span class="line">                .add(<span class="string">"systemID"</span>, systemID)</span><br><span class="line">                .toString();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p>测试上图流程标准日志输出代码<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=1, systemID=宝付用户发起支付&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2, systemID=支付网关收单&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.1, systemID=查询宝付账户信息&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.2, systemID=订单入库&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.3, systemID=收银台&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.3.1, systemID=银行网关&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.3.2, systemID=银行回调&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.3.3, systemID=宝付处理成功订单&#125;</span><br><span class="line">LogTraceModle&#123;traceID=4aa55d7a-f95d-4f7a-b3e1-223b4bf00d9a, routeID=2.3.3.1, systemID=通知商家&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">被外部系统调用的系统可以直接NewModel对象。</span><br><span class="line">然后通过下面的方法设置系统和调用方式，同步调用为Boolean.TRUE,异步为Boolean.<span class="function">FALSE</span><br><span class="line"><span class="title">setTraceModle</span><span class="params">(String systemID,<span class="keyword">boolean</span> isSync)</span></span><br><span class="line">调用内部系统传递要求使用JSON对模型进行序列化。</span><br><span class="line">如fastjson JSON.<span class="title">toJSONString</span><span class="params">(LogTraceModle)</span>.</span><br><span class="line"></span><br><span class="line">内部系统收到调用；先转为对象后重新设置</span><br><span class="line"><span class="title">setTraceModle</span><span class="params">(String systemID,<span class="keyword">boolean</span> isSync)</span></span></span><br></pre></td></tr></table></figure>
+<p>标示于原到系统为下图<br><img title="imageTitle" alt="Desc" class="class1" src="http://7xohxb.com1.z0.glb.clouddn.com/static/images/flow-webpay2.png?imageView2/2/w/600"></p>
+<p>关于多线程处理的业务可以加上LogTraceModle后把线程ID加上，严格意义上不同的订单需要不同的LogTraceModle，对于后台拆分的订单（大额下发），建议使用相同的LogTraceModle。保证订单数据的完整性。</p>
+<p>关于日志系统配置<br>通过slf4j MDC设置 <a href="http://logback.qos.ch/manual/mdc.html#autoMDC" target="_blank" rel="external">参考</a> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">LogTraceModle logTraceModle = <span class="keyword">new</span> LogTraceModle();</span><br><span class="line">logTraceModle.setTraceModle(<span class="string">"宝付用户发起支付"</span>, Boolean.TRUE);</span><br><span class="line">MDC.put(LogTraceModle, logTraceModle.toString());</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始业务处理</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 业务处理结束</span></span><br><span class="line">MDC.remove(LogTraceModle);</span><br></pre></td></tr></table></figure>
+<p>需要在logback的配置中加上<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">configuration</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"log.base"</span> <span class="attribute">value</span>=<span class="value">"./log/logback"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="title">appender</span> <span class="attribute">name</span>=<span class="value">"stdout"</span> <span class="attribute">class</span>=<span class="value">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">encoder</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="title">pattern</span>&gt;</span> %X&#123;LogTraceModle&#125; %date [%thread] %-5level %logger&#123;80&#125; - %msg%n</span><br><span class="line">       <span class="tag">&lt;/<span class="title">pattern</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="title">encoder</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">appender</span>&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="title">appender</span> <span class="attribute">name</span>=<span class="value">"logfile"</span></span><br><span class="line">     <span class="attribute">class</span>=<span class="value">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">File</span>&gt;</span> $&#123;log.base&#125;.log<span class="tag">&lt;/<span class="title">File</span> &gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">rollingPolicy</span> <span class="attribute">class</span>=<span class="value">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="title">FileNamePattern</span>&gt;</span> $&#123;log.base&#125;.%d&#123;yyyy -MM-dd&#125;.log.zip <span class="tag">&lt;/<span class="title">FileNamePattern</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="title">rollingPolicy</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">encoder</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;<span class="title">pattern</span>&gt;</span> %X&#123;LogTraceModle&#125; %date [%thread] %-5level %logger&#123;80&#125; - %msg%n</span><br><span class="line">       <span class="tag">&lt;/<span class="title">pattern</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="title">encoder</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">appender</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">logger</span> <span class="attribute">name</span>=<span class="value">"com.sample"</span> <span class="attribute">level</span>=<span class="value">"TRACE"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="title">root</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">level</span> <span class="attribute">value</span>=<span class="value">"INFO"</span> /&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"stdout"</span> /&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="title">appender-ref</span> <span class="attribute">ref</span>=<span class="value">"logfile"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="title">root</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="后记">后记</h3><p>异常日志等在后续的文档中规范。</p>
+
       
     </div>
     
